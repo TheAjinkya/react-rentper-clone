@@ -1,29 +1,25 @@
 import React from 'react'
+import { Carousel } from 'flowbite-react';
 
 function CardLayout() {
     return (
         <div>
-            <div class="card-group">
-                <div class="card bg-primary">
-                    <div class="card-body text-center">
-                        <p class="card-text">first card</p>
-                    </div>
-                </div>
-                <div class="card bg-warning">
-                    <div class="card-body text-center">
-                        <p class="card-text">second card</p>
-                    </div>
-                </div>
-                <div class="card bg-success">
-                    <div class="card-body text-center">
-                        <p class="card-text">third card</p>
-                    </div>
-                </div>
-                <div class="card bg-danger">
-                    <div class="card-body text-center">
-                        <p class="card-text">fourth card</p>
-                    </div>
-                </div>
+            <div className="grid mt-5 mr-5 h-56 grid-cols-2 gap-4 sm:h-64 xl:h-80 2xl:h-96">
+                <Carousel>
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+                </Carousel>
+                <Carousel>
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
+                    <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+                </Carousel>
+                
             </div>
         </div>
     )

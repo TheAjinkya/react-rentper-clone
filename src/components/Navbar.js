@@ -1,103 +1,202 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { Fragment, useState } from 'react'
+import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
+import {
+  ArrowPathIcon,
+  Bars3Icon,
+  ChartPieIcon,
+  CursorArrowRaysIcon,
+  FingerPrintIcon,
+  SquaresPlusIcon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline'
+import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
-function Navbar() {
-    return (<>
-        <header className="section-header">
-            <section className="header-main border-bottom">
-                <div className="container-fluid">
-                    <div className="row align-items-center">
-                        <div className="col-lg-3 col-sm-4 col-md-4 col-5"> <a href="#" className="brand-wrap" data-abc="true">
-                            {/* <img className="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"/>  */}
-                            <span className="logo">RentPer</span> </a> </div>
-                        <div className="col-lg-4 col-xl-5 col-sm-8 col-md-4 d-none d-md-block">
-                            <form action="#" className="search-wrap">
-                                <div className="input-group w-100">
-                                    <input type="text" className="form-control search-form" style={{ width: '55%' }} placeholder="Search" />
-                                    <div className="input-group-append"> <button className="btn btn-primary search-button" type="submit"> <i className="fa fa-search"></i> </button> </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
-                            <div className="d-flex justify-content-end"> <a target="_blank" href="#" data-abc="true" className="nav-link widget-header"> <i className="fas fa fa-whatsapp"></i></a> <span className="vl"></span>
-                                <div className="dropdown btn-group"> <a className="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-abc="true"><i className="fas fa fa-bell"></i></a>
-                                    <ul className="dropdown-menu dropdown-menu-right notification-dropdown">
-                                        <li>
-                                            <div className="notification-title">More Info</div>
-                                            <div className="notification-list">
-                                                <div className="list-group"> <a href="affiliates" className="list-group-item list-group-item-action active" data-abc="true">
-                                                    <div className="notification-info">
-                                                        <div className="notification-list-user-img"><img src="https://img.icons8.com/nolan/100/000000/helping-hand.png" alt="" className="user-avatar-md rounded-circle" /></div>
-                                                        <div className="notification-list-user-block"><span className="notification-list-user-name">Affiliate program</span> </div>
-                                                    </div>
-                                                </a> <a href="redemption-center" className="list-group-item list-group-item-action active" data-abc="true">
-                                                        <div className="notification-info">
-                                                            <div className="notification-list-user-img"><img src="https://img.icons8.com/bubbles/100/000000/prize.png" alt="" className="user-avatar-md rounded-circle" /></div>
-                                                            <div className="notification-list-user-block"><span className="notification-list-user-name">Redemption Center</span> </div>
-                                                        </div>
-                                                    </a> <a href="#" className="list-group-item list-group-item-action active" data-abc="true">
-                                                        <div className="notification-info">
-                                                            <div className="notification-list-user-img">
-                                                                <img src="https://img.icons8.com/ultraviolet/100/000000/medal.png" alt="" className="user-avatar-md rounded-circle" /></div>
-                                                            <div className="notification-list-user-block"><span className="notification-list-user-name">Achievements</span> </div>
-                                                        </div>
-                                                    </a> <a href="#" className="list-group-item list-group-item-action active" data-abc="true">
-                                                        <div className="notification-info">
-                                                            <div className="notification-list-user-img">
-                                                                <img src="https://img.icons8.com/bubbles/100/000000/call-female.png" alt="" className="user-avatar-md rounded-circle" /></div>
-                                                            <div className="notification-list-user-block"><span className="notification-list-user-name">Contact us</span> </div>
-                                                        </div>
-                                                    </a> </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div> <span className="vl"></span> <a className="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true"><span className="login">LOGIN</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <nav className="navbar navbar-expand-md navbar-main border-bottom">
-                <div className="container-fluid">
-                    <form className="d-md-none my-2">
-                        <div className="input-group"> <input type="search" name="search" className="form-control" placeholder="Search" required="" />
-                            <div className="input-group-append"> <button type="submit" className="btn btn-secondary"> <i className="fa fa-search"></i> </button> </div>
-                        </div>
-                    </form> <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#dropdown6" aria-expanded="false"> <span className="navbar-toggler-icon"></span> </button>
-                    <div className="navbar-collapse collapse" id="dropdown6">
-                        <ul className="navbar-nav mr-auto">
-                            
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/products">Products</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/professionals">Professionals</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="/services">Services</Link>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="" data-toggle="dropdown" data-abc="true" aria-expanded="false">Laptops</a>
-                                <div className="dropdown-menu">
-                                    <a className="dropdown-item" href="" data-abc="true">Lenovo</a>
-                                    <a className="dropdown-item" href="" data-abc="true">Dell</a>
-                                    <a className="dropdown-item" href="" data-abc="true">HP</a>
-                                    <a className="dropdown-item" href="" data-abc="true">Apple</a>
-                                </div>
-                            </li>
-                            <li className="nav-item"> <a className="nav-link" href="" data-abc="true">Refurbished Mobile</a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="" data-abc="true">Accessories & Peripheral</a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="" data-abc="true">Blog</a> </li>
-                            <li className="nav-item"> <a className="nav-link" href="" data-abc="true">Support</a> </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-    </>)
+const products = [
+  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
+  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
+  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
+  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+]
+const callsToAction = [
+  { name: 'Watch demo', href: '#', icon: PlayCircleIcon },
+  { name: 'Contact sales', href: '#', icon: PhoneIcon },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
 }
 
-export default Navbar
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <header className="bg-white">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <a href="#" className="-m-1.5 p-1.5">
+            <span className="sr-only">Your Company</span>
+            <img className="h-8 w-auto" src="https://www.rentper.org/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.f27af157.png&w=1920&q=75" alt="" />
+          </a>
+        </div>
+        <div className="flex lg:hidden">
+          <button
+            type="button"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <span className="sr-only">Open main menu</span>
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <Popover.Group className="hidden lg:flex lg:gap-x-12">
+          <Popover className="relative">
+            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+              Product
+              <ChevronDownIcon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+            </Popover.Button>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-200"
+              enterFrom="opacity-0 translate-y-1"
+              enterTo="opacity-100 translate-y-0"
+              leave="transition ease-in duration-150"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 translate-y-1"
+            >
+              <Popover.Panel className="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5">
+                <div className="p-4">
+                  {products.map((item) => (
+                    <div
+                      key={item.name}
+                      className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    >
+                      <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                        <item.icon className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" aria-hidden="true" />
+                      </div>
+                      <div className="flex-auto">
+                        <a href={item.href} className="block font-semibold text-gray-900">
+                          {item.name}
+                          <span className="absolute inset-0" />
+                        </a>
+                        <p className="mt-1 text-gray-600">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+                  {callsToAction.map((item) => (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
+                    >
+                      <item.icon className="h-5 w-5 flex-none text-gray-400" aria-hidden="true" />
+                      {item.name}
+                    </a>
+                  ))}
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover>
+
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Features
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Marketplace
+          </a>
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Company
+          </a>
+        </Popover.Group>
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            Log in <span aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </nav>
+      <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
+        <div className="fixed inset-0 z-10" />
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                className="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/10">
+              <div className="space-y-2 py-6">
+                <Disclosure as="div" className="-mx-3">
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">
+                        Product
+                        <ChevronDownIcon
+                          className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
+                          aria-hidden="true"
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="mt-2 space-y-2">
+                        {[...products, ...callsToAction].map((item) => (
+                          <Disclosure.Button
+                            key={item.name}
+                            as="a"
+                            href={item.href}
+                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                          >
+                            {item.name}
+                          </Disclosure.Button>
+                        ))}
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Features
+                </a>
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Marketplace
+                </a>
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Company
+                </a>
+              </div>
+              <div className="py-6">
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Log in
+                </a>
+              </div>
+            </div>
+          </div>
+        </Dialog.Panel>
+      </Dialog>
+    </header>
+  )
+}

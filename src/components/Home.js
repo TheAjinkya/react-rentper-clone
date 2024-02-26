@@ -1,21 +1,22 @@
-import React from 'react'
-import DashboardCarousel from './DashboardCarousel'
-import CardLayout from './CardLayout'
+import React from "react";
+import DashboardCarousel from "./DashboardCarousel";
+import CardLayout from "./CardLayout";
+import SearchBar from "./SearchBar";
 
 function Home() {
     return (
         <div>
-
-            <div class="row">
-                <div class="col-sm-6">
+            <div><SearchBar /></div>
+            <div class="flex">
+                <div class="flex-initial w-1/2">
                     <DashboardCarousel />
                 </div>
-                <div class="col-sm-6">
-                   <CardLayout/>
+                <div class="flex-initial w-1/2">
+                    <CardLayout />
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
-export default Home
+export default Home;
